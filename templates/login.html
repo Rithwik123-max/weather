@@ -3,19 +3,39 @@
 
 {% block content %}
 <style>
-    #re{
-        float:left;
+    
+    /* #re{ */
+        /* float:left; */
         /* padding:5px; */
-        margin-left:65px;
-        margin-bottom: 20px;
+        /* margin-left:65px; */
+        /* margin-bottom: 20px; */
+        
+    /* } */
+    /* span.a{
+        position:relative;
+    } */
+    #submit,
+    #reset
+    {
+        /* position:relative;
+         */
+         border-radius: 3px;
+        /* padding: px; */
+    }
+    #submit:hover,
+    #reset:hover{
+        color: rgb(179, 216, 12);
     }
 </style>
 <form action="#" method="post">
-    <p>Name:</p>
+    <h3>Enter the country name to get weather info:</h3>
     <p><input type="text" name="city_name" ></p>
-    <p><input type="submit" value="submit"></p>
-    <p id="re"><input type="reset" value="reset"></p>
-
+    <div>
+        <input type="submit" id="submit" value="submit">
+        <input type="reset" id="reset" value="reset">
+    </div>
+    
+    
 </form>
 
 

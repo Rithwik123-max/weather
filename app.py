@@ -72,9 +72,14 @@ def user(usr):
     # return f"<h1> {usr} </h1>"
     api_key="097b334776a97004ad759ceb8a082d3a"
     # city_name="warangal"
-    response=r.get(f'http://api.openweathermap.org/data/2.5/weather?q={usr}&appid={api_key}').json()
+    res=r.get(f'http://api.openweathermap.org/data/2.5/weather?q={usr}&appid={api_key}')
+    response=res.json()
+    if (response.get('cod')!=200):
+        return '<h2> There is a error in the city name you entered! Try again!!</h2>'
     country=response['sys']['country']
     res=r.get(f"https://restcountries.eu/rest/v2/alpha/{country}").json()
+    
+    
     coun=res['name']
     wind=response['wind']['speed']
 
@@ -92,7 +97,9 @@ def user(usr):
     sets=response['sys']['sunset']
     sunset=datetime.datetime.fromtimestamp(sets)
     sunset.strftime('%Y-%m-%d %H:%M:%S')
-    return('<h1>City-{}</h1><h2>Country-{}</h2><h2>The wind speed is {}</h2><h2>The description of weather is {} </h2><h2>Temp is {} centigrade</h2> <h2>Temp feels like {} centigrade</h2> <h2>Sunrise:{}</h2> <h2>Sunset:{}</h2>'.format(usr,coun,wind,description,temp,tempFeelsLike,sunrise,sunset))
+
+
+    return('<div class="cont"><h1>City-{}</h1><h2>Country-{}</h2><h2>The wind speed is {}</h2><h2>The description of weather is {} </h2><h2>Temp is {} centigrade</h2> <h2>Temp feels like {} centigrade</h2> <h2>Sunrise:{}</h2> <h2>Sunset:{}</h2></div>'.format(usr,coun,wind,description,temp,tempFeelsLike,sunrise,sunset),render_template("info.html"))
 
 
 
