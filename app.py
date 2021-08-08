@@ -18,8 +18,8 @@ def user(usr):
     api_key="097b334776a97004ad759ceb8a082d3a"
     res=r.get(f'http://api.openweathermap.org/data/2.5/weather?q={usr}&appid={api_key}')
     response=res.json()
-    if (response.get('cod')!=200):
-        return '<h2> There is a error in the city name you entered! Try again!!</h2>'
+#     if (response.get('cod')!=200):
+#         return '<h2> There is a error in the city name you entered! Try again!!</h2>'
     country=response['sys']['country']
     res=r.get(f"https://restcountries.eu/rest/v2/alpha/{country}").json()
     
