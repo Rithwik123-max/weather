@@ -43,7 +43,7 @@ def user(usr):
     sunset.strftime('%Y-%m-%d %H:%M:%S')
 
 
-    return('<div class="cont"><h1>City-{}</h1><h2>Country-{}</h2><h2>The wind speed is {}</h2><h2>The description of weather is {} </h2><h2>Temp is {} centigrade</h2> <h2>Temp feels like {} centigrade</h2> <h2>Sunrise:{}</h2> <h2>Sunset:{}</h2></div>'.format(usr,coun,wind,description,temp,tempFeelsLike,sunrise,sunset),render_template("info.html"))
+    return('<div class="cont"><h1>City-{}</h1><h2>Country-{}</h2><h2>The wind speed is {}</h2><h2>The description of weather is {} </h2><h2>Temp is {} centigrade</h2> <h2>Temp feels like {} centigrade</h2> <h2>Sunrise:{}</h2> <h2>Sunset:{}</h2></div>'.format(usr,coun,wind,description,temp,tempFeelsLike,sunrise,sunset),render_template("login.html"))
 
 
 
